@@ -1,0 +1,81 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int n;
+vector<string> clr;
+vector<int> par, d, f;
+int global_time;
+vector<int> cycle_nodes;
+
+void DFS(vector<vector<int>>& g, int u) {
+    clr[u] = "g";
+    global_time++;
+    d[u] = global_time;
+    for (int v : g[u]) {
+        if (clr[v] == "w") {
+            par[v] = u;
+            DFS(g, v);
+        } else if (clr[v] == "g") {
+            int node = u;
+            cycle_nodes.clear();
+            while (node != v) {
+                cycle_nodes.push_back(node);
+                node = par[node];
+            }
+            cycle_nodes.push_back(v);
+            reverse(cycle_nodes.begin(), cycle_nodes.end());
+            for (int c : cycle_nodes) {
+                cout << c << " ";
+            }
+            cout << endl;
+        }
+    }
+    clr[u] = "b";
+    global_time++;
+    f[u] = global_time;
+}
+
+int main() {
+    int e, u, v;
+    cin >> n >> e;
+    vector<vector<int>> g(n + 1);
+
+    for (int i = 0; i <= n; i++) {
+        clr.push_back("w");
+        d.push_back(0);
+        f.push_back(0);
+        par.push_back(-1);
+    }
+
+    for (int i = 0; i < e; i++) {
+        cin >> u >> v;
+        g[u].push_back(v);
+    }
+
+    global_time = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (clr[i] == "w") {
+            DFS(g, i);
+        }
+    }
+
+    return 0;
+}
+
+/*
+
+8node
+9edge
+0 1
+1 2
+2 3
+3 0
+2 4
+4 5
+5 6
+6 4
+6 7
+
+*/
+
