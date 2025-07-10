@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- First Number -->
+    <EditText
+        android:id="@+id/editTextNumber1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter first number"
+        android:inputType="numberDecimal" />
+
+    <!-- Second Number -->
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter second number"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="12dp" />
+
+    <!-- Operation Spinner -->
+    <Spinner
+        android:id="@+id/spinnerOperation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Calculate Button -->
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Result TextView -->
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result will appear here"
+        android:textSize="18sp"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>

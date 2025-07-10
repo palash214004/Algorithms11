@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- RelativeLayout for Name and Result -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your name"/>
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_below="@id/editTextName"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your age will appear here"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+    <!-- Gender RadioGroup -->
+    <RadioGroup
+        android:id="@+id/radioGroupGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"/>
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"/>
+    </RadioGroup>
+
+    <!-- Spinner -->
+    <Spinner
+        android:id="@+id/spinnerCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"/>
+
+    <!-- TextView as Date Picker Trigger -->
+    <TextView
+        android:id="@+id/textViewDOB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Date of Birth"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Checkbox -->
+    <CheckBox
+        android:id="@+id/checkBoxConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I confirm my information is correct"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"/>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate Age"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>
